@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana Senra-Silva, MSEd | Mineola Board of Education</title>
+  <meta name="description" content="Vote Ana Senra-Silva for Mineola Board of Education. Transparency, accountability, trust, and a strong community voice." />
+  <style>
+    :root {
+      --navy: #12307f;
+      --red: #ee1b3a;
+      --light: #f5f5f7;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(18, 48, 127, 0.12);
+      --radius: 22px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--navy);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid rgba(18,48,127,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+    }
+
+    .brand span { color: var(--red); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: #eef2ff;
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+
+    .lang-btn.active {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .hero {
+      padding: 46px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 10px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+    }
+
+    .namebar {
+      display: inline-block;
+      margin: 14px 0 14px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      font-size: clamp(1rem, 2.5vw, 1.45rem);
+      padding: 12px 16px;
+    }
+
+    .subtitle {
+      margin: 0 0 14px;
+      font-size: clamp(1.15rem, 2.6vw, 1.9rem);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .tagline {
+      margin: 0 0 18px;
+      font-size: clamp(1.2rem, 3vw, 1.9rem);
+      color: var(--red);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .points {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+    }
+
+    .point {
+      background: var(--white);
+      border-left: 8px solid var(--red);
+      border-radius: 16px;
+      padding: 15px 16px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+      text-transform: uppercase;
+    }
+
+    .hero-card,
+    .card,
+    .issue {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 16px;
+    }
+
+    .flyer-img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+
+    section { padding: 20px 0; }
+
+    .info-grid,
+    .issues,
+    .share-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .issues {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .share-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .card,
+    .issue {
+      padding: 24px;
+    }
+
+    .card h3,
+    .issue h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .vote-box {
+      border: 3px solid var(--navy);
+      background: linear-gradient(180deg, #fff 0%, #f9fbff 100%);
+    }
+
+    .vote-box .date {
+      margin-top: 12px;
+      font-size: clamp(1.25rem, 3vw, 1.9rem);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .vote-box .hours {
+      margin-top: 8px;
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .issue {
+      border-top: 8px solid var(--red);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 0.96rem;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+
+    .qr-box {
+      text-align: center;
+    }
+
+    .qr-box img {
+      max-width: 220px;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .qr-label {
+      margin-top: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    #shareNotice {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      z-index: 999;
+      font-weight: 700;
+    }
+
+    .lang { display: none; }
+    .lang.active { display: block; }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .info-grid,
+      .issues,
+      .share-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 18px), var(--max)); }
+      .card, .issue, .hero-card { padding: 18px; }
+      .btn { width: 100%; justify-content: center; }
+      .lang-toggle { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">VOTE <span>ANA</span></a>
+      <nav>
+        <a href="#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="#priorities" data-en="Priorities" data-pt="Prioridades">Priorities</a>
+        <a href="#vote" data-en="Vote" data-pt="Voto">Vote</a>
+        <div class="lang-toggle" aria-label="Language toggle">
+          <button class="lang-btn active" id="btn-en" type="button" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn" id="btn-pt" type="button" onclick="setLanguage('pt')">PT</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow lang active" data-lang="en">Mineola Board of Education</div>
+          <div class="eyebrow lang" data-lang="pt">Conselho Escolar de Mineola</div>
+
+          <h1>VOTE</h1>
+          <div class="namebar">ANA SENRA-SILVA, MSEd</div>
+
+          <p class="subtitle lang active" data-lang="en">For Mineola Board of Education</p>
+          <p class="subtitle lang" data-lang="pt">Para o Conselho Escolar de Mineola</p>
+
+          <p class="tagline lang active" data-lang="en">Putting Students First</p>
+          <p class="tagline lang" data-lang="pt">Colocar os Alunos em Primeiro Lugar</p>
+
+          <div class="points lang active" data-lang="en" aria-label="Campaign priorities">
+            <div class="point">Transparency</div>
+            <div class="point">Accountability</div>
+            <div class="point">A Community Voice</div>
+          </div>
+
+          <div class="points lang" data-lang="pt" aria-label="Prioridades da campanha">
+            <div class="point">Transparência</div>
+            <div class="point">Responsabilidade</div>
+            <div class="point">Uma Voz da Comunidade</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img class="flyer-img" src="e80d841c-bbd7-4537-a069-44f86604e444.png" alt="Campaign flyer for Ana Senra-Silva" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap info-grid">
+        <div class="card">
+          <div class="lang active" data-lang="en">
+            <h3>About Ana</h3>
+            <p>Hi, my name is Ana Senra-Silva, and I am proud to be running for the Mineola Board of Education.</p>
+            <p>I am a mother of two wonderful boys—one attending Hampton Street School and another at Mineola Middle School—and like many families here, I am deeply invested in the success of our schools and our community.</p>
+            <p>I hold a Bachelor of Science in Biological Sciences from SUNY Old Westbury and a Master of Science in Education from Hofstra University. As an educator in Nassau County, I understand firsthand the importance of supporting our teachers and ensuring every student has the opportunity to succeed.</p>
+            <p>I am proud of my Portuguese heritage, and I am equally proud to call Mineola home.</p>
+            <p>I am running on a platform of transparency, accountability, and a strong community voice because our community deserves open communication and meaningful input in the decisions that impact our children’s future.</p>
+          </div>
+
+          <div class="lang" data-lang="pt">
+            <h3>Sobre a Ana</h3>
+            <p>Olá, o meu nome é Ana Senra-Silva e tenho o orgulho de me candidatar ao Conselho Escolar de Mineola.</p>
+            <p>Sou mãe de dois rapazes maravilhosos — um na Hampton Street School e outro na Mineola Middle School — e, como muitas famílias da nossa comunidade, estou profundamente empenhada no sucesso das nossas escolas e da nossa vila.</p>
+            <p>Tenho uma licenciatura em Ciências Biológicas pela SUNY Old Westbury e um mestrado em Educação pela Universidade de Hofstra. Como educadora no condado de Nassau, compreendo em primeira mão a importância de apoiar os nossos professores e de garantir que todos os alunos tenham a oportunidade de ter sucesso.</p>
+            <p>Tenho muito orgulho das minhas raizes portuguesas e também em chamar Mineola a minha casa.</p>
+            <p>Candidato-me com base na transparência, na responsabilidade e numa forte voz da comunidade, porque a nossa comunidade merece comunicação aberta e uma participação verdadeira nas decisões que afetam o futuro dos nossos filhos.</p>
+          </div>
+        </div>
+
+        <div class="card vote-box" id="vote">
+          <div class="lang active" data-lang="en">
+            <h3>Voting Information</h3>
+            <p><strong>Location:</strong><br>Synergy Building<br>2400 Jericho Turnpike<br>Garden City Park, NY</p>
+            <div class="date">Tuesday, May 19, 2026</div>
+            <div class="hours">6:00 A.M. – 9:00 P.M.</div>
+          </div>
+
+          <div class="lang" data-lang="pt">
+            <h3>Informação de Voto</h3>
+            <p><strong>Local:</strong><br>Synergy Building<br>2400 Jericho Turnpike<br>Garden City Park, NY</p>
+            <div class="date">Terça-feira, 19 de Maio de 2026</div>
+            <div class="hours">06:00 – 21:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="priorities">
+      <div class="wrap">
+        <h2 class="section-title lang active" data-lang="en">Priorities</h2>
+        <h2 class="section-title lang" data-lang="pt">Prioridades</h2>
+
+        <div class="issues lang active" data-lang="en">
+          <article class="issue">
+            <h3>Transparency</h3>
+            <p>Clear communication and open decision-making help build trust with families and the community.</p>
+          </article>
+          <article class="issue">
+            <h3>Accountability</h3>
+            <p>Strong oversight and responsible leadership help ensure decisions stay focused on students.</p>
+          </article>
+          <article class="issue">
+            <h3>A Community Voice</h3>
+            <p>Parents, residents, and stakeholders deserve to be heard in the future of the district.</p>
+          </article>
+          <article class="issue">
+            <h3>Protecting Student Privacy</h3>
+            <p>Ensuring student data is protected in compliance with state requirements and best practices.</p>
+          </article>
+        </div>
+
+        <div class="issues lang" data-lang="pt">
+          <article class="issue">
+            <h3>Transparência</h3>
+            <p>Uma comunicação clara e decisões abertas ajudam a criar confiança com as famílias e com toda a comunidade.</p>
+          </article>
+          <article class="issue">
+            <h3>Responsabilidade</h3>
+            <p>Uma supervisão forte e uma liderança responsável ajudam a garantir que as decisões continuam centradas nos alunos.</p>
+          </article>
+          <article class="issue">
+            <h3>Uma Voz da Comunidade</h3>
+            <p>Os pais, os residentes e todos os envolvidos merecem ser ouvidos no futuro do distrito escolar.</p>
+          </article>
+          <article class="issue">
+            <h3>Proteção da Privacidade dos Alunos</h3>
+            <p>Garantir que os dados dos alunos são protegidos em conformidade com os requisitos do estado e boas práticas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <div class="card" style="text-align:center;">
+          <div class="lang active" data-lang="en">
+            <h3>Support the Campaign</h3>
+            <p>We are simply asking for your support on <strong>May 19</strong>.</p>
+          </div>
+          <div class="lang" data-lang="pt">
+            <h3>Apoio à Campanha</h3>           
+            <p>Estamos apenas a pedir o seu apoio no dia <strong>19 de Maio</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="share">
+      <div class="wrap">
+        <div class="card">
+          <div class="lang active" data-lang="en">
+            <h3 style="text-align:center;">Share the Campaign</h3>
+            <p style="text-align:center;">Help spread the word. Share this campaign with friends, family, and neighbors.</p>
+          </div>
+          <div class="lang" data-lang="pt">
+            <h3 style="text-align:center;">Partilhar a Campanha</h3>
+            <p style="text-align:center;">Ajude a divulgar. Partilhe esta campanha com amigos, família e vizinhos.</p>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://www.facebook.com/sharer/sharer.php?u=https://ana4boe.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="btn btn-primary" href="https://twitter.com/intent/tweet?url=https://ana4boe.com&text=Support%20Ana%20Senra-Silva%20for%20Mineola%20Board%20of%20Education.%20Vote%20May%2019!" target="_blank" rel="noopener noreferrer">X</a>
+            <a class="btn btn-secondary lang active" data-lang="en" href="sms:?&body=Please%20support%20Ana%20Senra-Silva%20for%20Mineola%20Board%20of%20Education%20on%20May%2019.%20Learn%20more:%20https://ana4boe.com">Send by Text</a>
+            <a class="btn btn-secondary lang" data-lang="pt" href="sms:?&body=Por%20favor%20apoie%20Ana%20Senra-Silva%20para%20o%20Conselho%20Escolar%20de%20Mineola%20no%20dia%2019%20de%20Maio.%20Saiba%20mais:%20https://ana4boe.com">Enviar por Mensagem</a>
+            <button class="btn btn-secondary lang active" data-lang="en" type="button" onclick="copyLink('Campaign link copied!')">Copy Link</button>
+            <button class="btn btn-secondary lang" data-lang="pt" type="button" onclick="copyLink('Ligação copiada!')">Copiar Ligação</button>
+          </div>
+
+          <div class="share-grid" style="margin-top:28px;">
+            <div>
+              <div class="lang active" data-lang="en">
+                <h3>Scan and Share</h3>
+                <p>Use the QR code below on flyers, posts, and printed materials so voters can quickly visit the campaign website.</p>
+                <a class="btn btn-primary" href="ana_qrcode_home.png" download>Download QR Code</a>
+              </div>
+              <div class="lang" data-lang="pt">
+                <h3>Ler e Partilhar</h3>
+                <p>Utilize o código QR abaixo em panfletos, publicações e materiais impressos para que os eleitores possam visitar rapidamente o website da campanha.</p>
+                <a class="btn btn-primary" href="ana_qrcode_home.png" download>Descarregar Código QR</a>
+              </div>
+            </div>
+            <div class="qr-box">
+              <img src="ana_qrcode_home.png" alt="QR code linking to the campaign website" />
+              <div class="qr-label lang active" data-lang="en">Scan to Learn More</div>
+              <div class="qr-label lang" data-lang="pt">Leia para Saber Mais</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="shareNotice"></div>
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang').forEach(function(el) {
+        el.classList.remove('active');
+        if (el.getAttribute('data-lang') === lang) {
+          el.classList.add('active');
+        }
+      });
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+
+      document.querySelectorAll('nav a[data-en]').forEach(function(link) {
+        link.textContent = lang === 'pt' ? link.getAttribute('data-pt') : link.getAttribute('data-en');
+      });
+    }
+
+    function copyLink(message) {
+      const url = 'https://ana4boe.com';
+      navigator.clipboard.writeText(url).then(function () {
+        const notice = document.getElementById('shareNotice');
+        notice.textContent = message;
+        notice.style.opacity = '1';
+        setTimeout(function () {
+          notice.style.opacity = '0';
+        }, 2200);
+      }).catch(function () {
+        alert(url);
+      });
+    }
+  </script>
+</body>
+</html>
